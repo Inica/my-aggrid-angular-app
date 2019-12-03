@@ -1,0 +1,6 @@
+<ag-grid-angular class="ag-theme-balham" [rowData]="RowData" [columnDefs]="columnDefs" [modules]="Modules"
+    [domLayout]="'autoHeight'" (gridReady)="onGridReady($event)" [paginationPageSize]="PaginationPageSize"
+    [pagination]="true" [suppressPaginationPanel]="true" [frameworkComponents]="FrameworkComponents">
+</ag-grid-angular>
+<app-pagination [pageSize]="PaginationPageSize" [gridApi]="gridAPI">
+</app-pagination>
