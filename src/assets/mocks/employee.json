@@ -3,13 +3,15 @@
         "id": "1001",
         "name": "Alexandra",
         "unit": "Digital",
-        "stream": "Web"
+        "stream": "Web",
+        "status": true
     },
     {
         "id": "1002",
         "name": "Hannah",
         "unit": "Utilities",
-        "stream": "API"
+        "stream": "API",
+        "status": true
     },
     {
         "id": "1003",
@@ -165,7 +167,8 @@
         "id": "1028",
         "name": "Jacob",
         "unit": "Mobility",
-        "stream": "Database"
+        "stream": "Database",
+        "status": true
     },
     {
         "id": "1029",
@@ -195,7 +198,8 @@
         "id": "1033",
         "name": "Jacob",
         "unit": "Mobility",
-        "stream": "Database"
+        "stream": "Database",
+        "status": true
     },
     {
         "id": "1034",
@@ -213,7 +217,8 @@
         "id": "1036",
         "name": "Alexandra",
         "unit": "Digital",
-        "stream": "Web"
+        "stream": "Web",
+        "status": false
     },
     {
         "id": "1037",

@@ -2,5 +2,5 @@
     [domLayout]="'autoHeight'" (gridReady)="onGridReady($event)" [paginationPageSize]="PaginationPageSize"
     [pagination]="true" [suppressPaginationPanel]="true" [frameworkComponents]="FrameworkComponents">
 </ag-grid-angular>
-<app-pagination [pageSize]="PaginationPageSize" [gridApi]="gridAPI">
+<app-pagination [pageSize]="PaginationPageSize" [gridApi]="gridAPI" [noOfPages]="gridAPI?.paginationGetTotalPages()">
 </app-pagination>

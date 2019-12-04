@@ -10,6 +10,8 @@ import { GridComponent } from './grid/grid.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { MaterialModule } from './common/material.module';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { StreamEditorComponent } from './stream-editor/stream-editor.component';
+import { StatusRendererComponent } from './status-renderer/status-renderer.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
     GridComponent,
     PaginationComponent,
     SearchFilterComponent,
+    StreamEditorComponent,
+    StatusRendererComponent,
   ],
   imports: [
     BrowserModule,
-    AgGridModule.withComponents([SearchFilterComponent]),
+    AgGridModule.withComponents([SearchFilterComponent, StatusRendererComponent, StreamEditorComponent]),
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
