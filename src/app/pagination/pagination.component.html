@@ -10,7 +10,8 @@
             {{page}}
         </button>
     </span>
-    <button mat-button *ngIf="(PaginationPages.totalPages - PaginationPages.startPage) > 5">
+    <button mat-button *ngIf="(PaginationPages.totalPages - PaginationPages.startPage) > 5"
+        (click)="goToPage(PaginationPages.startPage + 5)">
         ...
     </button>
     <button mat-raised-button *ngIf="(PaginationPages.totalPages - PaginationPages.startPage) > 5"

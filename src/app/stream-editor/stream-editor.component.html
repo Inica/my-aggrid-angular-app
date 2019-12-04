@@ -1,0 +1,11 @@
+<div>
+    <mat-form-field>
+        <mat-label>Select Stream</mat-label>
+        <mat-select [(value)]="Selected" (selectionChange)="onChange(Selected)">
+            <mat-option value="Web">Web</mat-option>
+            <mat-option value="API">API</mat-option>
+            <mat-option value="Database">Database</mat-option>
+            <mat-option value="Full-stack">Full-stack</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

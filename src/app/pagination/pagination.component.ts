@@ -11,8 +11,8 @@ import { PagerService } from '../services/pager.service';
 export class PaginationComponent implements OnChanges {
   @Input() pageSize = 0;
   @Input() gridApi: GridApi;
+  @Input() noOfPages = 0;
   private paginationPages = {};
-  private noOfPages = 0;
 
   get PaginationPages() {
     return this.paginationPages;
@@ -23,16 +23,15 @@ export class PaginationComponent implements OnChanges {
   }
 
   get totalPages(): number {
-    return this.gridApi ? this.gridApi.paginationGetTotalPages() : 0;
+    return this.noOfPages;
   }
 
   constructor(private pagerService: PagerService) { }
 
   ngOnChanges(changes: SimpleChanges) {
     for (const propName in changes) {
-      if (propName === 'gridApi') {
-        this.paginationPages = this.gridApi ? this.pagerService.getPager(this.gridApi.paginationGetTotalPages(), 1) : {};
-        this.noOfPages = this.gridApi ? this.gridApi.paginationGetTotalPages() : 0;
+      if (propName === 'noOfPages') {
+        this.paginationPages = this.noOfPages ? this.pagerService.getPager(this.noOfPages, 1) : {};
       }
     }
   }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AllCommunityModules, GridApi, Module } from '@ag-grid-community/all-modules';
 import { EmployeeService } from '../services/employee.service';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
+import { StatusRendererComponent } from '../status-renderer/status-renderer.component';
+import { StreamEditorComponent } from '../stream-editor/stream-editor.component';
 
 @Component({
   selector: 'app-grid',
@@ -14,7 +16,11 @@ export class GridComponent implements OnInit {
   private paginationPageSize = 5;
   private totalPages = 0;
   private rowData = [];
-  private frameworkComponents = { searchFilterComponent: SearchFilterComponent };
+  private frameworkComponents = {
+    searchFilterComponent: SearchFilterComponent,
+    statusRendererComponent: StatusRendererComponent,
+    streamEditorComponent: StreamEditorComponent
+  };
   private modules = AllCommunityModules;
 
   get PaginationPageSize(): number {
@@ -45,7 +51,8 @@ export class GridComponent implements OnInit {
     { headerName: 'Employee Id', field: 'id' },
     { headerName: 'Employee Name', field: 'name', filter: 'searchFilterComponent' },
     { headerName: 'Unit', field: 'unit' },
-    { headerName: 'Technology stream', field: 'stream' }
+    { headerName: 'Technology stream', field: 'stream', cellEditor: 'streamEditorComponent', editable: true, },
+    { headerName: 'Status', field: 'status', cellRenderer: 'statusRendererComponent' }
   ];
 
   constructor(private employeeService: EmployeeService) { }
