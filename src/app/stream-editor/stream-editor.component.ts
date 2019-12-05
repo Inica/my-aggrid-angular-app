@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ICellRendererAngularComp } from '@ag-grid-community/angular';
+import { ICellEditorAngularComp } from '@ag-grid-community/angular';
 
 @Component({
   selector: 'app-stream-editor',
   templateUrl: './stream-editor.component.html',
   styleUrls: ['./stream-editor.component.scss']
 })
-export class StreamEditorComponent implements ICellRendererAngularComp {
+export class StreamEditorComponent implements ICellEditorAngularComp {
 
   private params: any;
   private selected: boolean;
@@ -39,7 +39,6 @@ export class StreamEditorComponent implements ICellRendererAngularComp {
   }
 
   onChange(value) {
-    this.setStream(value);
     this.params.api.stopEditing();
   }
 
